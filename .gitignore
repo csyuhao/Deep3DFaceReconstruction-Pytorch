@@ -1,0 +1,8 @@
+BFM/*
+dataset/*
+facebank/*
+*.pt
+output/*
+__pycache__/*
+!examples/*
+params/*
