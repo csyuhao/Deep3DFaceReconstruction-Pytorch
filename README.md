@@ -2,13 +2,13 @@
 
 Pytorch version of the repo [Deep3DFaceReconstruction](https://github.com/microsoft/Deep3DFaceReconstruction).
 
-This reo only contains the **reconstruction** part, so you can use [Deep3DFaceReconstruction-pytorch](https://github.com/changhongjian/Deep3DFaceReconstruction-pytorch) repo to train the network. And the pretrained model is also from this [repo](https://github.com/changhongjian/Deep3DFaceReconstruction-pytorch/tree/master/network).
+This repo only contains the **reconstruction** part, so you can use [Deep3DFaceReconstruction-pytorch](https://github.com/changhongjian/Deep3DFaceReconstruction-pytorch) repo to train the network. And the pretrained model is also from this [repo](https://github.com/changhongjian/Deep3DFaceReconstruction-pytorch/tree/master/network).
 
 ## Features
 
 ### MTCNN
 
-I use mtcnn to crop raw images and detect 5 landmarks. The most code of MTCNN is come from [FaceNet-pytorch](https://github.com/timesler/facenet-pytorch).
+I use mtcnn to crop raw images and detect 5 landmarks. The most code of MTCNN comes from [FaceNet-pytorch](https://github.com/timesler/facenet-pytorch).
 
 ### Pytorc3d
 
@@ -45,8 +45,7 @@ Here are some examples:
 ```
 
 Also, this repo can also generate the UV map, and you need download UV coordinates from the following link:  
-&nbsp;&nbsp;Download UV coordinates fom STN  
-&nbsp;&nbsp;website: https://github.com/anilbas/3DMMasSTN/blob/master/util/BFM_UV.mat  
-&nbsp;&nbsp;copy BFM_UV.mat to BFM
+&nbsp;&nbsp;Download UV coordinates fom STN website: https://github.com/anilbas/3DMMasSTN/blob/master/util/BFM_UV.mat  
+&nbsp;&nbsp;Copy BFM_UV.mat to BFM
 
-The pretrained models can be downlaod from [Google Drive](https://drive.google.com/file/d/1JjLl8-7Qurwlq5q61hSJEbCKFrhPh0t2/view?usp=sharing).
+The pretrained models can be downloaded from [Google Drive](https://drive.google.com/file/d/1JjLl8-7Qurwlq5q61hSJEbCKFrhPh0t2/view?usp=sharing).
