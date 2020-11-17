@@ -6,3 +6,5 @@ output/*
 __pycache__/*
 !examples/*
 params/*
+.vscode/*
+*.pyc

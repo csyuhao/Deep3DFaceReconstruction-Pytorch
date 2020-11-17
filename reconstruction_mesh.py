@@ -281,9 +281,10 @@ def render_img(face_shape, face_color, facemodel, image_size=224, fx=1015.0, fy=
             face_color: Tensor[1, 35709, 3] in [0, 1]
             facemodel: contains `tri` (triangles[70789, 3], index start from 1)
     '''
-    from pytorch3d.structures import Meshes, Textures
+    from pytorch3d.structures import Meshes
+    from pytorch3d.renderer.mesh.textures import TexturesVertex
     from pytorch3d.renderer import (
-        SfMPerspectiveCameras,
+        PerspectiveCameras,
         PointLights,
         RasterizationSettings,
         MeshRenderer,
@@ -292,7 +293,7 @@ def render_img(face_shape, face_color, facemodel, image_size=224, fx=1015.0, fy=
         BlendParams
     )
 
-    face_color = Textures(verts_rgb=face_color.to(device))
+    face_color = TexturesVertex(verts_features=face_color.to(device))
     face_buf = torch.from_numpy(facemodel.tri - 1)  # index start from 1
     face_idx = face_buf.unsqueeze(0)
 
@@ -306,7 +307,7 @@ def render_img(face_shape, face_color, facemodel, image_size=224, fx=1015.0, fy=
     focal_length = torch.tensor([fx / half_size, fy / half_size], dtype=torch.float32).reshape(1, 2).to(device)
     principal_point = torch.tensor([(half_size - px) / half_size, (py - half_size) / half_size], dtype=torch.float32).reshape(1, 2).to(device)
 
-    cameras = SfMPerspectiveCameras(
+    cameras = PerspectiveCameras(
         device=device,
         R=R,
         T=T,

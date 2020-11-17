@@ -12,7 +12,7 @@ I use mtcnn to crop raw images and detect 5 landmarks. The most code of MTCNN co
 
 ### Pytorc3d
 
-In this repo, I use [pytorch3d](https://github.com/facebookresearch/pytorch3d) to render the reconstructed images.
+In this repo, I use [PyTorch3d 0.3.0](https://github.com/facebookresearch/pytorch3d) to render the reconstructed images.
 
 ### Estimating Intrinsic Parameters
 
